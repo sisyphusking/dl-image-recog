@@ -1,0 +1,9 @@
+tensorflow
+keras
+matplotlib
+captcha
+numpy
+ipython
+pydot
+tqdm
+cairocffi
