@@ -4,6 +4,13 @@ import numpy as np
 import random
 
 
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+                'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+HEIGHT = 40
+WIDTH = 250
+N_CLASS = 26
+
+
 def get_pictures(path):
     images = []
     imagepath = os.path.join(os.getcwd(), "data", path)
@@ -19,8 +26,7 @@ def image_vec(image):
 
 
 def label_vec(label, length):
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
     y = [np.zeros((1, len(alphabet)), dtype=np.uint8) for i in range(length)]
     for j, ch in enumerate(label):
         y[j][0, :] = 0
@@ -53,11 +59,6 @@ def load_dataset(data):
     return data_len, length, data_set, labels
 
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-HEIGHT = 40
-WIDTH = 250
-N_CLASS = 26
 data_len, cata_len, X, Y = load_dataset('train')
 
 
